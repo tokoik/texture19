@@ -36,7 +36,7 @@ static const char texture1[] = "dot.raw";  /* テクスチャファイル名 */
 /*
 ** 初期化
 */
-static void init(void)
+static void init()
 {
   /* テクスチャの読み込みに使う配列 */
   GLubyte texture[TEXHEIGHT * TEXWIDTH * 4];
@@ -189,7 +189,7 @@ static void init(void)
 /*
 ** シーンの描画
 */
-static void scene(void)
+static void scene()
 {
   static const GLfloat color[] = { 1.0f, 1.0f, 1.0f, 1.0f };  /* 材質 (色) */
   
@@ -253,7 +253,7 @@ static void scene(void)
 ** GLUT のコールバック関数 **
 ****************************/
 
-static void display(void)
+static void display()
 {
   /* 画面クリア */
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -291,7 +291,7 @@ static void resize(int w, int h)
   gluPerspective(40.0, (double)w / (double)h, 0.1, 10.0);
 }
 
-static void idle(void)
+static void idle()
 {
   /* 画面の描き替え */
   glutPostRedisplay();
