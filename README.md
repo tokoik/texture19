@@ -137,3 +137,5 @@ glMultiTexCoord2dv(GL_TEXTURE2, texcoord[j][i]);
 ### 4.4 描画時のマルチテクスチャの有効化 (`scene()` 関数)
 
 図形を描画する際には、各テクスチャユニットを順次アクティブにして機能を有効化（`glEnable()`）します。ユニット0とユニット1では `GL_TEXTURE_2D` に加えてテクスチャ座標の自動生成（`GL_TEXTURE_GEN_S` など）を有効にし、ユニット2では `GL_TEXTURE_2D` のみを有効にします。描画処理（`box()`）が完了したら、他の描画に影響を与えないよう `glDisable()` を使って各機能を無効化します。
+
+![放物面マッピングとほかのテクスチャとの合成](https://github.com/tokoik/blog/assets/images/texture19.webp)
