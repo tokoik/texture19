@@ -5,7 +5,9 @@
 #else
 #  include <GL/glut.h>
 #  include <GL/glext.h>
+#  if defined(_WIN32)
 extern PFNGLMULTITEXCOORD2DVPROC glMultiTexCoord2dv;
+#  endif
 #endif
 
 #include "box.h"
