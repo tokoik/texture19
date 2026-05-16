@@ -101,7 +101,7 @@ static void init()
   glActiveTexture(GL_TEXTURE0);
   glBindTexture(GL_TEXTURE_2D, texname[1]);
 
-  /* テクスチャ画像の読み込み */
+  /* 裏面の放物面テクスチャ画像の読み込み */
   if ((fp = fopen("paraboloid1.raw", "rb")) != NULL) {
     fread(texture, sizeof texture, 1, fp);
     fclose(fp);
@@ -145,7 +145,7 @@ static void init()
   glActiveTexture(GL_TEXTURE1);
   glBindTexture(GL_TEXTURE_2D, texname[2]);
 
-  /* テクスチャ画像の読み込み */
+  /* 表面の放物面テクスチャ画像の読み込み */
   if ((fp = fopen("paraboloid2.raw", "rb")) != NULL) {
     fread(texture, sizeof texture, 1, fp);
     fclose(fp);
@@ -325,8 +325,8 @@ static void mouse(int button, int state, int x, int y)
       break;
     }
     break;
-    default:
-      break;
+  default:
+    break;
   }
 }
 
@@ -352,7 +352,7 @@ static void keyboard(unsigned char key, int x, int y)
 /*
 ** メインプログラム
 */
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
   glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);
